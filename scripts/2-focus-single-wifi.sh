@@ -5,4 +5,6 @@ read bssid
 echo "Channel:"
 read channel
 mkdir -p captured
-sudo airodump-ng -w captured/$bssid -c $channel --bssid $bssid wlan0
+timestamp=$(date +"%Y-%m-%d---%H-%M-%S")
+
+sudo airodump-ng -w "captured/$timestamp---$bssid" -c $channel --bssid $bssid wlan0
